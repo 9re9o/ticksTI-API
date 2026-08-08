@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Tu aplicación de Node.js
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/postgres
+    depends_on:
+      - db
+
+  # Base de datos de Supabase (Postgres)
+  db:
+    image: supabase/postgres:15.1.087.000
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      # Configuración específica para versiones recientes de Supabase
+      # Si usas la imagen 'supabase/postgres' sin versión, usa el comando por defecto.
+      # Si usas una versión específica, a veces es necesario ajustar el comando.
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+
+  # (Opcional) Si necesitas el panel de control de Supabase o Auth
+  # edge:
+  #   image: supabase/edge-runtime
+  #   ports:
+  #     - "8000:8000"
