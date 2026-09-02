@@ -7,12 +7,12 @@ export class UserSpecialization {
     id!: string;
 
     @Column('uuid')
-    userId!: string;
+    userId: string;
 
     @Column('uuid')
-    specializationId!: string; ///relacion fk 
+    specializationId: string; ///relacion fk 
 
     @Column({nullable: false})
-    level!: number // 1 - 5  | 5=> mas fuerte 
+    level: number // 1 - 5  | 5=> mas fuerte 
 
 }

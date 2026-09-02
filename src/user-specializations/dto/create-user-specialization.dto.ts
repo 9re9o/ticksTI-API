@@ -10,5 +10,12 @@ export class CreateUserSpecializationDto {
     @IsInt()
     @Min(1)
     @Max(5)
-    level: number; // 1 - 5 | 5 => mas fuerte
+    level: number; 
+    /**
+        1 → Básico
+        2 → Básico/Intermedio
+        3 → Intermedio
+        4 → Avanzado
+        5 → Experto
+     */
 }

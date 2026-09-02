@@ -14,7 +14,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { CategorySpecializationsModule } from './category-specializations/category-specializations.module';
 import { RecommendationsModule } from './recommendations/recommendations.module';
 import { equipmentModule } from './equipment/equipment.module';
-import { TypeequipmentModule } from './type-equipment/type-equipment.module';
+// import { EquipmentTypesModule } from './type-equipment/type-equipment.module';
 import { ActionsModule } from './actions/actions.module';
 import { TicketHistoryModule } from './ticket-history/ticket-history.module';
 
@@ -67,7 +67,7 @@ import { TicketHistoryModule } from './ticket-history/ticket-history.module';
 
     equipmentModule,
 
-    TypeequipmentModule,
+    // EquipmentTypesModule,
 
     ActionsModule,
 

@@ -1,15 +1,15 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { equipmentService } from './equipment.service';
-import { CreateAssetDto } from './dto/create-asset.dto';
-import { UpdateAssetDto } from './dto/update-asset.dto';
+import { CreateEquipmentDto} from './dto/create-equipment.dto';
+import { UpdateEquipmentDto} from './dto/update-equipment.dto';
 
 @Controller('equipment')
 export class equipmentController {
   constructor(private readonly equipmentService: equipmentService) {}
 
   @Post()
-  create(@Body() createAssetDto: CreateAssetDto) {
-    return this.equipmentService.create(createAssetDto);
+  create(@Body() createEquipmentDto: CreateEquipmentDto) {
+    return this.equipmentService.create(createEquipmentDto);
   }
 
   @Get()
@@ -23,8 +23,8 @@ export class equipmentController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateAssetDto: UpdateAssetDto) {
-    return this.equipmentService.update(+id, updateAssetDto);
+  update(@Param('id') id: string, @Body() updateEquipmentDto: UpdateEquipmentDto) {
+    return this.equipmentService.update(+id, updateEquipmentDto);
   }
 
   @Delete(':id')
